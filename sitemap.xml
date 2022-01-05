@@ -10,6 +10,9 @@
     <loc>https://pennlinc.github.io/ModelArray/articles/ModelArray_basics.html</loc>
   </url>
   <url>
+    <loc>https://pennlinc.github.io/ModelArray/articles/basic_r_intro.html</loc>
+  </url>
+  <url>
     <loc>https://pennlinc.github.io/ModelArray/articles/index.html</loc>
   </url>
   <url>
@@ -73,7 +76,7 @@
     <loc>https://pennlinc.github.io/ModelArray/reference/show-ModelArray-method.html</loc>
   </url>
   <url>
-    <loc>https://pennlinc.github.io/ModelArray/reference/subjects-ModelArray-method.html</loc>
+    <loc>https://pennlinc.github.io/ModelArray/reference/sources-ModelArray-method.html</loc>
   </url>
   <url>
     <loc>https://pennlinc.github.io/ModelArray/reference/writeResults.html</loc>

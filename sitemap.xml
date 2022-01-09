@@ -37,18 +37,6 @@
     <loc>https://pennlinc.github.io/ModelArray/reference/analyseOneElement.lm.html</loc>
   </url>
   <url>
-    <loc>https://pennlinc.github.io/ModelArray/reference/check_validity_correctPValue.html</loc>
-  </url>
-  <url>
-    <loc>https://pennlinc.github.io/ModelArray/reference/checker_gam_formula.html</loc>
-  </url>
-  <url>
-    <loc>https://pennlinc.github.io/ModelArray/reference/checker_gam_s.html</loc>
-  </url>
-  <url>
-    <loc>https://pennlinc.github.io/ModelArray/reference/checker_gam_t.html</loc>
-  </url>
-  <url>
     <loc>https://pennlinc.github.io/ModelArray/reference/generator_gamFormula_continuousInteraction.html</loc>
   </url>
   <url>
@@ -64,9 +52,6 @@
     <loc>https://pennlinc.github.io/ModelArray/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>https://pennlinc.github.io/ModelArray/reference/printAdditionalArgu.html</loc>
-  </url>
-  <url>
     <loc>https://pennlinc.github.io/ModelArray/reference/results-ModelArray-method.html</loc>
   </url>
   <url>
@@ -80,8 +65,5 @@
   </url>
   <url>
     <loc>https://pennlinc.github.io/ModelArray/reference/writeResults.html</loc>
-  </url>
-  <url>
-    <loc>https://pennlinc.github.io/ModelArray/reference/writeResults.old.html</loc>
   </url>
 </urlset>

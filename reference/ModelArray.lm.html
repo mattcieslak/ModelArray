@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ModelArray</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,9 +24,11 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/ModelArray_basics.html">ModelArray Quick Start</a>
-    <a class="dropdown-item" href="../articles/basic_r_intro.html">An intro to R</a>
+    <a class="dropdown-item" href="../articles/installations.html">Installation</a>
+    <a class="dropdown-item" href="../articles/walkthrough.html">Example walkthrough</a>
     <a class="dropdown-item" href="../articles/doc_for_developer.html">Developer documentation</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../articles/index.html">More articles...</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -50,72 +52,106 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">ModelArray.lm</span><span class="op">(</span>
-  <span class="va">formula</span>,
-  <span class="va">data</span>,
-  <span class="va">phenotypes</span>,
-  <span class="va">scalar</span>,
-  element.subset <span class="op">=</span> <span class="cn">NULL</span>,
-  full.outputs <span class="op">=</span> <span class="cn">FALSE</span>,
-  var.terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"estimate"</span>, <span class="st">"statistic"</span>, <span class="st">"p.value"</span><span class="op">)</span>,
-  var.model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adj.r.squared"</span>, <span class="st">"p.value"</span><span class="op">)</span>,
-  correct.p.value.terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fdr"</span><span class="op">)</span>,
-  correct.p.value.model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fdr"</span><span class="op">)</span>,
-  num.subj.lthr.abs <span class="op">=</span> <span class="fl">10</span>,
-  num.subj.lthr.rel <span class="op">=</span> <span class="fl">0.2</span>,
-  verbose <span class="op">=</span> <span class="cn">TRUE</span>,
-  pbar <span class="op">=</span> <span class="cn">TRUE</span>,
-  n_cores <span class="op">=</span> <span class="fl">1</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">ModelArray.lm</span><span class="op">(</span></span>
+<span>  <span class="va">formula</span>,</span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">phenotypes</span>,</span>
+<span>  <span class="va">scalar</span>,</span>
+<span>  element.subset <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  full.outputs <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  var.terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"estimate"</span>, <span class="st">"statistic"</span>, <span class="st">"p.value"</span><span class="op">)</span>,</span>
+<span>  var.model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adj.r.squared"</span>, <span class="st">"p.value"</span><span class="op">)</span>,</span>
+<span>  correct.p.value.terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fdr"</span><span class="op">)</span>,</span>
+<span>  correct.p.value.model <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fdr"</span><span class="op">)</span>,</span>
+<span>  num.subj.lthr.abs <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  num.subj.lthr.rel <span class="op">=</span> <span class="fl">0.2</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  pbar <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  n_cores <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>formula</dt>
 <dd><p>Formula (passed to `stats::lm()`)</p></dd>
+
+
 <dt>data</dt>
 <dd><p>ModelArray class</p></dd>
+
+
 <dt>phenotypes</dt>
 <dd><p>A data.frame of the cohort with columns of independent variables and covariates to be added to the model. It should contains a column called "source_file", and this column should match to that in <code>data</code>.</p></dd>
+
+
 <dt>scalar</dt>
 <dd><p>A character. The name of the element-wise scalar to be analysed</p></dd>
+
+
 <dt>element.subset</dt>
 <dd><p>A list of positive integers (min = 1, max = number of elements). The subset of elements you want to run. Default is `NULL`, i.e. requesting all elements in `data`.</p></dd>
+
+
 <dt>full.outputs</dt>
 <dd><p>TRUE or FALSE, Whether to return full set of outputs. If FALSE, it will only return those requested in arguments <code>var.*</code> and <code>correct.p.value.*</code>; if TRUE, arguments <code>var.*</code> will be ignored, and will return all possible statistics for <code>var.*</code> and any options requested in arguments <code>correct.p.value.*</code>.</p></dd>
+
+
 <dt>var.terms</dt>
 <dd><p>A list of characters. The list of variables to save for terms (got from `broom::tidy()`). See "Details" section for more.</p></dd>
+
+
 <dt>var.model</dt>
 <dd><p>A list of characters. The list of variables to save for the model (got from `broom::glance()`). See "Details" section for more.</p></dd>
+
+
 <dt>correct.p.value.terms</dt>
 <dd><p>A list of characters. To perform and add a column for p.value correction for each term. Default: "fdr". See "Details" section for more.</p></dd>
+
+
 <dt>correct.p.value.model</dt>
 <dd><p>A list of characters. To perform and add a column for p.value correction for the model. Default: "fdr". See "Details" section for more.</p></dd>
+
+
 <dt>num.subj.lthr.abs</dt>
 <dd><p>An integer, lower threshold of absolute number of subjects. For an element, if number of subjects who have finite values (defined by `is.finite()`, i.e. not NaN or NA or Inf) in h5 file &gt; <code>num.subj.lthr.abs</code>, then this element will be run normally; otherwise, this element will be skipped and statistical outputs will be set as NaN. Default is 10.</p></dd>
+
+
 <dt>num.subj.lthr.rel</dt>
 <dd><p>A value between 0-1, lower threshold of relative number of subjects. Similar to <code>num.subj.lthr.abs</code>, if proportion of subjects who have valid value &gt; <code>num.subj.lthr.rel</code>, then this element will be run normally; otherwise, this element will be skipped and statistical outputs will be set as NaN. Default is 0.2.</p></dd>
+
+
 <dt>verbose</dt>
 <dd><p>TRUE or FALSE, to print verbose message or not</p></dd>
+
+
 <dt>pbar</dt>
 <dd><p>TRUE or FALSE, to print progress bar or not</p></dd>
+
+
 <dt>n_cores</dt>
 <dd><p>Positive integer, The number of CPU cores to run with</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Additional arguments for `stats::lm()`</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Tibble with the summarized model statistics for all elements requested</p>
+    
+
+<p>Tibble with the summarized model statistics for all elements requested</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>You may request returning specific statistical variables by setting <code>var.*</code>, or you can get all by setting <code>full.outputs=TRUE</code>. 
 Note that statistics covered by <code>full.outputs</code> or <code>var.*</code> are the ones from broom::tidy() and broom::glance() only, and do not include corrected p-values. However FDR-corrected p-values ("fdr") are generated by default.
-List of acceptable statistic names for each of <code>var.*</code>:</p><ul><li><p><code>var.terms</code>: c("estimate","std.error","statistic","p.value"); For interpretation please see `broom:tidy()`.</p></li>
-<li><p><code>var.model</code>: c("r.squared", "adj.r.squared", "sigma", "statistic", "p.value", "df", "logLik", "AIC", "BIC", "deviance", "df.residual", "nobs"); For interpretation please see `broom::glance()`.</p></li>
-</ul><p>For p-value corrections (arguments <code>correct.p.value.*</code>), supported methods include all methods in `p.adjust.methods` except "none". Can be more than one method. FDR-corrected p-values ("fdr") are calculated by default. Turn it off by setting to "none".</p>
+List of acceptable statistic names for each of <code>var.*</code>:</p><ul><li><p><code>var.terms</code>: c("estimate","std.error","statistic","p.value"); For interpretation please see <a href="https://broom.tidymodels.org/reference/tidy.lm.html" class="external-link">tidy.lm</a>.</p></li>
+<li><p><code>var.model</code>: c("r.squared", "adj.r.squared", "sigma", "statistic", "p.value", "df", "logLik", "AIC", "BIC", "deviance", "df.residual", "nobs"); For interpretation please see <a href="https://broom.tidymodels.org/reference/glance.lm.html" class="external-link">glance.lm</a>.</p></li>
+</ul><p>For p-value corrections (arguments <code>correct.p.value.*</code>), supported methods include all methods in `p.adjust.methods` except "none". Can be more than one method. FDR-corrected p-values ("fdr") are calculated by default. Turn it off by setting to "none". <br>
+Arguments <code>num.subj.lthr.abs</code> and <code>num.subj.lthr.rel</code> are mainly for input data with subject-specific masks, i.e. currently only for volume data. For fixel data, you may ignore these arguments.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -123,11 +159,11 @@ List of acceptable statistic names for each of <code>var.*</code>:</p><ul><li><p
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by Chenying Zhao, Tinashe Tapera, Matthew Cieslak.</p>
+  <p></p><p>Developed by Chenying Zhao, Tinashe Tapera, Matthew Cieslak, Theodore Satterthwaite.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

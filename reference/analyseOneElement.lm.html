@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ModelArray</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,9 +24,11 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/ModelArray_basics.html">ModelArray Quick Start</a>
-    <a class="dropdown-item" href="../articles/basic_r_intro.html">An intro to R</a>
+    <a class="dropdown-item" href="../articles/installations.html">Installation</a>
+    <a class="dropdown-item" href="../articles/walkthrough.html">Example walkthrough</a>
     <a class="dropdown-item" href="../articles/doc_for_developer.html">Developer documentation</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../articles/index.html">More articles...</a>
   </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
@@ -50,49 +52,72 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">analyseOneElement.lm</span><span class="op">(</span>
-  <span class="va">i_element</span>,
-  <span class="va">formula</span>,
-  <span class="va">modelarray</span>,
-  <span class="va">phenotypes</span>,
-  <span class="va">scalar</span>,
-  <span class="va">var.terms</span>,
-  <span class="va">var.model</span>,
-  <span class="va">num.subj.lthr</span>,
-  num.stat.output <span class="op">=</span> <span class="cn">NULL</span>,
-  flag_initiate <span class="op">=</span> <span class="cn">FALSE</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">analyseOneElement.lm</span><span class="op">(</span></span>
+<span>  <span class="va">i_element</span>,</span>
+<span>  <span class="va">formula</span>,</span>
+<span>  <span class="va">modelarray</span>,</span>
+<span>  <span class="va">phenotypes</span>,</span>
+<span>  <span class="va">scalar</span>,</span>
+<span>  <span class="va">var.terms</span>,</span>
+<span>  <span class="va">var.model</span>,</span>
+<span>  <span class="va">num.subj.lthr</span>,</span>
+<span>  num.stat.output <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  flag_initiate <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>i_element</dt>
 <dd><p>An integer, the i_th element, starting from 1. For initiating (flag_initiate = TRUE), use i_element=1</p></dd>
+
+
 <dt>formula</dt>
 <dd><p>Formula (passed to `stats::lm()`)</p></dd>
+
+
 <dt>modelarray</dt>
 <dd><p>ModelArray class</p></dd>
+
+
 <dt>phenotypes</dt>
 <dd><p>A data.frame of the cohort with columns of independent variables and covariates to be added to the model.</p></dd>
+
+
 <dt>scalar</dt>
 <dd><p>A character. The name of the element-wise scalar to be analysed</p></dd>
+
+
 <dt>var.terms</dt>
 <dd><p>A list of characters. The list of variables to save for terms (got from `broom::tidy()`).</p></dd>
+
+
 <dt>var.model</dt>
 <dd><p>A list of characters. The list of variables to save for the model (got from `broom::glance()`).</p></dd>
+
+
 <dt>num.subj.lthr</dt>
 <dd><p>The minimal number of subjects with valid value in input h5 file, i.e. number of subjects with finite values (defined by `is.finite()`, i.e. not NaN or NA or Inf) in h5 file &gt; <code>num.subj.lthr</code>, then this element will be run normally; otherwise, this element will be skipped and statistical outputs will be set as NaN.</p></dd>
+
+
 <dt>num.stat.output</dt>
 <dd><p>The number of output stat metrics (for generating all NaN stat when # subjects does not meet criteria). This includes column `element_id`. This is required when flag_initiate = TRUE.</p></dd>
+
+
 <dt>flag_initiate</dt>
 <dd><p>TRUE or FALSE, Whether this is to initiate the new analysis. If TRUE, it will return column names etc to be used for initiating data.frame; if FALSE, it will return the list of requested statistic values.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>Additional arguments for `stats::lm()`</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>If flag_initiate==TRUE, returns column names, and list of term names of final results; if flag_initiate==FALSE, it will return the list of requested statistic values for a element.</p>
+    
+
+<p>If flag_initiate==TRUE, returns column names, and list of term names of final results; if flag_initiate==FALSE, it will return the list of requested statistic values for a element.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -104,11 +129,11 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by Chenying Zhao, Tinashe Tapera, Matthew Cieslak.</p>
+  <p></p><p>Developed by Chenying Zhao, Tinashe Tapera, Matthew Cieslak, Theodore Satterthwaite.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>
